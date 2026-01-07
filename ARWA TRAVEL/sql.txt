@@ -1,0 +1,75 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS arwa_travels;
+USE arwa_travels;
+
+-- Create tours table with the final structure
+CREATE TABLE IF NOT EXISTS tours (
+    tour_id INT AUTO_INCREMENT PRIMARY KEY,
+    tour_name TEXT NOT NULL,
+    accommodation TEXT NOT NULL,
+    required_documents TEXT NOT NULL,
+    main_image VARCHAR(255),
+    image2 VARCHAR(255),
+    image3 VARCHAR(255),    
+    price DECIMAL(10, 2) NOT NULL,
+    duration VARCHAR(50) NOT NULL,
+    meals_provided TEXT NOT NULL,
+    currency_code VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create tour_types table with icons
+CREATE TABLE IF NOT EXISTS tour_types (
+    type_id INT AUTO_INCREMENT PRIMARY KEY,
+    type_name VARCHAR(50) NOT NULL UNIQUE,
+    type_icon VARCHAR(255) NOT NULL
+);
+
+-- Create tour_type_relations table to link tours with their types
+CREATE TABLE IF NOT EXISTS tour_type_relations (
+    tour_id INT,
+    type_id INT,
+    PRIMARY KEY (tour_id, type_id),
+    FOREIGN KEY (tour_id) REFERENCES tours(tour_id) ON DELETE CASCADE,
+    FOREIGN KEY (type_id) REFERENCES tour_types(type_id) ON DELETE CASCADE
+);
+
+-- Create admin_users table for administrators
+CREATE TABLE IF NOT EXISTS admin_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert predefined tour types with their icons
+INSERT INTO tour_types (type_name, type_icon) VALUES 
+    ('International Tours', 'airplane.png'),
+    ('Adventure Tours', 'skiing.png'),
+    ('Local Tours', 'mountain.png'),
+    ('Leisure Tours', 'beach-chair (1).png'),
+    ('Honeymoon Packages', 'honeymoon.png'),
+    ('Trekking Tours', 'hiking.png')
+ON DUPLICATE KEY UPDATE type_name=VALUES(type_name);
+
+-- Insert a default admin user with an encrypted password
+INSERT INTO admin_users (username, password) 
+VALUES ('admin', '$2y$10$8K1p/bFhF0RhI0MyPzYYVeIkZY.rH5rKqxR15.YtOzNrHY2dK/Ydi')
+ON DUPLICATE KEY UPDATE username=VALUES(username);
+
+-- Create currencies table
+CREATE TABLE IF NOT EXISTS currencies (
+    currency_id INT AUTO_INCREMENT PRIMARY KEY,
+    currency_code VARCHAR(10) NOT NULL UNIQUE,  -- e.g., USD, EUR
+    currency_name VARCHAR(50) NOT NULL           -- e.g., US Dollar, Euro
+);
+
+-- Insert predefined currencies
+INSERT INTO currencies (currency_code, currency_name) VALUES 
+    ('USD', 'US Dollar'),
+    ('EUR', 'Euro'),
+    ('GBP', 'British Pound'),
+    ('PKR', 'Pakistan Rupee'),
+    ('AUD', 'Australian Dollar'),
+    ('CAD', 'Canadian Dollar')
+ON DUPLICATE KEY UPDATE currency_name=VALUES(currency_name);

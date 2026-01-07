@@ -1,0 +1,877 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f0f2f5;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000; 
+  backdrop-filter: blur(5px); 
+  top: 0; 
+}
+
+.navbar {
+  background-color: transparent; 
+  box-shadow: none; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 15px 30px; 
+  width: 100%; 
+}
+
+.logo {
+  position: absolute; /* Change to absolute positioning */
+  left: 30px; /* Align to the left */
+  top: 20px; /* Adjust top position as needed */
+  display: flex; 
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.logo img {
+  height: 50px; 
+  margin-right: 10px; 
+}
+
+.logo p {
+  margin-left: 20px;
+  color: white; 
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #214ed3;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ff5733;
+}
+
+/* Position toggle button in the top-right corner */
+.menu-button {
+  position: fixed;   /* Make it fixed to stay in the top-right */
+  top: 20px;         /* Adjusts how far from the top it is */
+  right: 15px;       /* Adjusts how far from the right it is */
+  background-color: #ff5733;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1002;     /* Ensures it appears above other elements */
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.menu-button img {
+  width: 15px;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+}
+
+/* Slide-out Menu Container */
+.menu-container {
+  position: fixed;
+  top: 0;
+  height: 800px;
+  right: -250px; /* Initially hidden */
+  width: 200px;
+  background-color: #214ed3;
+  color: black;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1001;
+  padding-top: 60px; /* Adjust padding to avoid overlap */
+  background-color: white; /* Ensure the background is white */
+  top: 0; /* Ensure it starts from the top */
+  z-index: 1001; /* Ensure it is above other elements */
+}
+
+/* Slide-out Menu Container */
+
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.menu-container ul li {
+  padding: 15px 20px;
+}
+
+.menu-container ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.menu-container ul li a:hover {
+  color: #ff5733;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .floating-nav {
+    display: none; /* Hide the floating-nav on mobile */
+  }
+
+  .navbar {
+    display: flex; /* Show the navbar */
+    justify-content: space-between; /* Space between logo and menu button */
+    align-items: center; /* Center items vertically */
+  }
+
+  .menu-button {
+    display: block; /* Show the menu button */
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 769px) {
+  .menu-button {
+    display: none; /* Hide the menu button on larger screens */
+  }
+
+  .navbar {
+    display: none; /* Hide the navbar on larger screens */
+  }
+
+  .floating-nav {
+    display: flex; /* Show the floating-nav on larger screens */
+  }
+}
+
+.floating-nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Change background to black */
+  position: fixed; /* Fixed position to float */
+  top: 23px; /* Adjust below the header */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Centering adjustment */
+  border-radius: 10px; /* Pill shape */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  z-index: 1000; /* Keep it above other content */
+}
+
+.floating-nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.floating-nav ul li {
+  margin: 0 15px; /* Space between items */
+}
+
+.floating-nav ul li a {
+  text-decoration: none;
+  color: #ffffff; /* Dark text color */
+  font-weight: bold; /* Make text bold */
+  padding: 10px 20px; /* Padding for clickable area */
+  border-radius: 20px; /* Rounded corners for links */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.floating-nav ul li a:hover {
+  background-color: white; /* Change background on hover */
+  border-radius: 10px;
+  color: #ff5733; /* Change text color on hover */
+}
+
+.search-icon i {
+  font-size: 20px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.search-icon i:hover {
+  color: #ff5733;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), 
+  rgba(0, 0, 0, 0.5)), url("../Photos/background image.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.search-bar button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tour-types {
+  padding: 50px 0;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+   rgba(0, 0, 0, 0.5)), url("../Photos/4th\ background\ image.jpeg");
+}
+
+.tour-types h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.tour-types p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.tour-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.tour-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 150px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height to make it square */
+}
+
+.tour-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tour-item img {
+  width: 70px; /* Adjust image width to fit within the square */
+  height: 70px; /* Adjust image height to fit within the square */
+  object-fit: contain; /* Ensure the image maintains its aspect ratio */
+  margin-bottom: 10px;
+}
+
+.tour-item h3 {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333;
+  text-align: center;
+}
+
+.section-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.carousel-container {
+  max-width: 288px; /* 3 inches */
+  margin: 0 auto;
+  position: relative;
+  height: 450px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.4s ease;
+  gap: 48px;
+  height: 80%;
+
+}
+
+.card {
+  flex: 0 0 288px; /* 3 inches */
+  max-width: 288px;
+  height: 528px; /* 5.5 inches */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  text-align: center;
+  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-image {
+  height: 70%;
+  overflow: hidden;
+  background-size: cover; 
+  background-position: center; 
+  position: relative; 
+}
+
+.card img {
+  width: 100%; /* Stretch to fill the width */
+  height: 100%; /* Stretch to fill the height */
+  object-fit: cover; /* Ensure the image covers the entire area */
+  position: relative; /* Ensure proper positioning */
+}
+
+.card h3 {
+  margin-top: 15px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.carousel-dots {
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  margin-top: 500px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffd1c1;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #ff5733;
+}
+
+.learn-more {
+  background-color: #e64a2e;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  height: 40px;
+  width: 100px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more :hover {
+  background-color: #214ed3;
+}
+
+.view-all-deals {
+  display: block;
+  width: max-content;
+  margin: 48px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e64a2e;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+  margin-bottom: 250px;
+}
+
+.view-all-deals:hover {
+  background-color: #214ed3;
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 50px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .search-bar input {
+    width: 200px;
+  }
+
+  .trip-content {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .navbar ul {
+    margin-top: 15px;
+  }
+
+  .hero {
+    height: 500px;
+    padding-top: 150px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar input {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .search-bar button {
+    width: 80%;
+  }
+
+  
+  .tour-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+  justify-content: center; /* Center items */
+  gap: 10px; /* Adjust gap between items */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.tour-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 calc(33.33% - 10px); /* Set width to 33.33% for three items in a row */
+  height: 150px; /* Set a fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+}
+
+  .tour-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tour-item h3 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .tour-types h2 {
+    font-size: 24px;
+  }
+
+  .tour-types p {
+    font-size: 14px;
+  }
+
+  .carousel {
+    height: 200px;
+  }
+
+  .carousel-container h2 {
+    font-size: 18px;
+  }
+
+  h3,
+  h4 {
+    font-size: 14px;
+  }
+
+  .deal-info p,
+  .days,
+  .destination {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .learn-more {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+
+  .deal-card img,
+  .trip-image {
+    width: 35%;
+  }
+
+  .deal-info,
+  .trip-info {
+    width: 65%;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .hero-text p {
+    font-size: 12px;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 90%;
+  }
+
+  .tour-item {
+    padding: 20px;
+  }
+
+  .tour-item h3 {
+    font-size: 18px;
+  }
+
+  .tour-item p {
+    font-size: 14px;
+  }
+
+  .carousel {
+    height: 350px;
+  }
+
+  .deal-card,
+  .trip-content {
+    flex-direction: column;
+  }
+
+  .deal-card img,
+  .trip-image,
+  .deal-info,
+  .trip-info {
+    width: 100%;
+  }
+
+  .deal-card img,
+  .trip-image {
+    height: 40%;
+  }
+
+  .deal-info,
+  .trip-info {
+    height: 60%;
+  }
+
+  h3,
+  h4 {
+    font-size: 12px;
+  }
+
+  .deal-info p,
+  .days,
+  .destination {
+    font-size: 9px;
+  }
+
+  .price {
+    font-size: 11px;
+  }
+
+  .learn-more {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+
+.footer-content {
+  background-color: #333; 
+  color: white; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+.footer-contact h3 {
+  margin-bottom: 10px; 
+}
+
+.footer-contact p {
+  color: white;
+  margin: 5px 0; 
+}
+
+.footer-contact p a {
+  color: white;  
+  font-size: 25px; 
+  font-weight: bold;
+  margin: 5px 0; 
+}
+
+.instructions-list {
+  list-style-type: none; 
+  padding: 0;
+}
+
+.instructions-list li {
+  margin: 10px 0;
+}
+
+.Top-deals-section {
+  padding: 40px 20px;
+
+  overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+   rgba(0, 0, 0, 0.5)), url("../Photos/3rd\ background\ image.jpeg");
+  background-size: cover; 
+  background-position: center; 
+  position: relative; 
+}
+
+@media screen and (max-width: 768px) {
+  header,
+  .floating-nav {
+    display: none; 
+  }
+
+  .menu-button {
+    display: block; 
+  }
+}
+
+@media (max-width: 768px) {
+    .floating-nav {
+        display: none; 
+    }
+    .menu-container {
+        display: block; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex; 
+    flex-direction: column; 
+  }
+
+  .navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+  }
+
+  .floating-nav {
+    display: none; 
+  }
+
+  .menu-button {
+    display: block; 
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu-button {
+    display: none; 
+  }
+
+  .navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 30px; 
+    background-color: transparent; 
+  }
+
+  .floating-nav {
+    display: flex; 
+  }
+
+  .menu-button {
+    display: none; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    background-color:transparent ; 
+  }
+
+  .floating-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block; 
+  }
+}
+
+.carousel-dots {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 220px; 
+}
+
+
+@media screen and (max-width: 768px) {
+  .carousel-dots {
+    margin-top: 380px; 
+  }
+}
+
+.view-all-deals {
+  display: block; 
+  width: max-content; 
+  margin: 48px auto 0; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  background-color: #e64a2e; 
+  color: white; 
+  text-decoration: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+  text-align: center;
+  margin-top: 180px ;
+}
+
+@media screen and (max-width: 768px) {
+  .view-all-deals {
+    margin-top: 180px; 
+  }
+}
+
+/* Add this CSS to your existing styles */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722; /* Change to your preferred color */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.floating-button img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin-right: 8px; /* Space between image and text */
+}
+
+
+

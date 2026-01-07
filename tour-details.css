@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: black;
+    background-color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 1000; 
+    backdrop-filter: blur(5px); 
+    top: 0; 
+  }
+  
+  .navbar {
+    background-color: transparent; 
+    box-shadow: none; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 30px; 
+    width: 100%; 
+  }
+  
+  .logo {
+    position: absolute; /* Change to absolute positioning */
+    left: 30px; /* Align to the left */
+    top: 20px; /* Adjust top position as needed */
+    display: flex; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 150px;
+    border-radius: 10px; 
+  }
+  
+  .logo img {
+    height: 50px; 
+    margin-right: 10px; 
+  }
+  
+  .logo p {
+    margin-left: 20px;
+    color: white; 
+    font-weight: bolder;
+    font-size: larger;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar ul li {
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #214ed3;
+    margin-top: 10px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    color: #ff5733;
+  }
+  
+  /* Position toggle button in the top-right corner */
+  .menu-button {
+    position: fixed;   /* Make it fixed to stay in the top-right */
+    top: 20px;         /* Adjusts how far from the top it is */
+    right: 15px;       /* Adjusts how far from the right it is */
+    background-color: #ff5733;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1002;     /* Ensures it appears above other elements */
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
+  
+  .menu-button img {
+    width: 15px;
+    height: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+  }
+  
+  /* Slide-out Menu Container */
+  .menu-container {
+    position: fixed;
+    top: 0;
+    height: 800px;
+    right: -250px; /* Initially hidden */
+    width: 200px;
+    background-color: #214ed3;
+    color: black;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1001;
+    padding-top: 60px; /* Adjust padding to avoid overlap */
+    background-color: white; /* Ensure the background is white */
+    top: 0; /* Ensure it starts from the top */
+    z-index: 1001; /* Ensure it is above other elements */
+  }
+  
+  /* Slide-out Menu Container */
+  
+  .menu-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .menu-container ul li {
+    padding: 15px 20px;
+  }
+  
+  .menu-container ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-container ul li a:hover {
+    color: #ff5733;
+  }
+  
+  /* Media query for mobile view */
+  @media screen and (max-width: 768px) {
+    .floating-nav {
+      display: none; /* Hide the floating-nav on mobile */
+    }
+  
+    .navbar {
+      display: flex; /* Show the navbar */
+      justify-content: space-between; /* Space between logo and menu button */
+      align-items: center; /* Center items vertically */
+    }
+  
+    .menu-button {
+      display: block; /* Show the menu button */
+    }
+  }
+  
+  /* Media query for larger screens */
+  @media screen and (min-width: 769px) {
+    .menu-button {
+      display: none; /* Hide the menu button on larger screens */
+    }
+  
+    .navbar {
+      display: none; /* Hide the navbar on larger screens */
+    }
+  
+    .floating-nav {
+      display: flex; /* Show the floating-nav on larger screens */
+    }
+  }
+  
+  .floating-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly opaque background */
+    position: fixed; /* Fixed position to float */
+    top: 23px; /* Adjust below the header */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    border-radius: 10px; /* Pill shape */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1000; /* Keep it above other content */
+  }
+  
+  .floating-nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .floating-nav ul li {
+    margin: 0 15px; /* Space between items */
+  }
+  
+  .floating-nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Dark text color */
+    font-weight: bold; /* Make text bold */
+    padding: 10px 20px; /* Padding for clickable area */
+    border-radius: 20px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  
+  .floating-nav ul li a:hover {
+    background-color: white; /* Change background on hover */
+    border-radius: 10px;
+    color: #ff5733; /* Change text color on hover */
+  }
+  /* ... (rest of the styles remain the same) ... */
+  
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;  /* Keep hero text white for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    border-radius: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: black;  /* Keep headings black for emphasis */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;  /* Keep footer text white for contrast */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+}
+@media screen and (max-width: 768px) {
+    header,
+    .floating-nav {
+      display: none; 
+    }
+  
+    .menu-button {
+      display: block; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+      .floating-nav {
+          display: none; 
+      }
+      .menu-container {
+          display: block; 
+      }
+  }
+  
+  @media screen and (max-width: 768px) {
+    header {
+      display: flex; 
+      flex-direction: column; 
+    }
+  
+    .navbar {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 10px; 
+      background-color: rgba(255, 255, 255, 0.8); 
+    }
+  
+    .floating-nav {
+      display: none; 
+    }
+  
+    .menu-button {
+      display: block; 
+    }
+  }
+  
+  @media screen and (min-width: 769px) {
+    .menu-button {
+      display: none; 
+    }
+  
+    .navbar {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 15px 30px; 
+      background-color: transparent; 
+    }
+  
+    .floating-nav {
+      display: flex; 
+    }
+  
+    .menu-button {
+      display: none; 
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 10px; 
+      background-color:transparent ; 
+    }
+  
+    .floating-nav {
+      display: none;
+    }
+  
+    .menu-button {
+      display: block; 
+    }
+  }
+  
+  /* Add this CSS to your existing styles */
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722; /* Change to your preferred color */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  .floating-button img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin-right: 8px; /* Space between image and text */
+  }
+  

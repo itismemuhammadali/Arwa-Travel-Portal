@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0;
+}
+
+header {
+    background-color: #007bff; /* Blue background for header */
+    color: white; /* White text */
+    padding: 10px 0; /* Padding for header */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the logo */
+}
+
+.admin-container {
+    max-width: 800px; /* Max width for the form */
+    margin: 20px auto; /* Center the container */
+    background-color: white; /* White background for the form */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.form-section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+    width: 97%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.submit-button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside button */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer {
+    text-align: center; /* Center footer text */
+    margin-top: 20px; /* Space above footer */
+    padding: 10px 0; /* Padding for footer */
+    background-color: #007bff; /* Blue background for footer */
+    color: white; /* White text */
+}
+
+.tour-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.tour-type-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.tour-type-checkbox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.tour-type-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.tour-type-checkbox label {
+    cursor: pointer;
+    text-align: center;
+}
+
+.tour-type-checkbox img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.tour-type-checkbox input[type="checkbox"]:checked + label {
+    color: #007bff;
+}
+
+.tour-type-checkbox input[type="checkbox"]:checked + label img {
+    transform: scale(1.1);
+}

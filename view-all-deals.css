@@ -1,0 +1,556 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ... (previous styles remain the same) ... */
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  top: 0;
+}
+
+.navbar {
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  width: 100%;
+}
+
+.logo {
+  position: absolute;
+  /* Change to absolute positioning */
+  left: 30px;
+  /* Align to the left */
+  top: 20px;
+  /* Adjust top position as needed */
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo p {
+  margin-left: 20px;
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #214ed3;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ff5733;
+}
+
+/* Position toggle button in the top-right corner */
+.menu-button {
+  position: fixed;
+  /* Make it fixed to stay in the top-right */
+  top: 20px;
+  /* Adjusts how far from the top it is */
+  right: 15px;
+  /* Adjusts how far from the right it is */
+  background-color: #ff5733;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1002;
+  /* Ensures it appears above other elements */
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.menu-button img {
+  width: 15px;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+}
+
+/* Slide-out Menu Container */
+.menu-container {
+  position: fixed;
+  top: 0;
+  height: 800px;
+  right: -250px;
+  /* Initially hidden */
+  width: 200px;
+  background-color: #214ed3;
+  color: black;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1001;
+  padding-top: 60px;
+  /* Adjust padding to avoid overlap */
+  background-color: white;
+  /* Ensure the background is white */
+  top: 0;
+  /* Ensure it starts from the top */
+  z-index: 1001;
+  /* Ensure it is above other elements */
+}
+
+/* Slide-out Menu Container */
+
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.menu-container ul li {
+  padding: 15px 20px;
+}
+
+.menu-container ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.menu-container ul li a:hover {
+  color: #ff5733;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .floating-nav {
+    display: none;
+    /* Hide the floating-nav on mobile */
+  }
+
+  .navbar {
+    display: flex;
+    /* Show the navbar */
+    justify-content: space-between;
+    /* Space between logo and menu button */
+    align-items: center;
+    /* Center items vertically */
+  }
+
+  .menu-button {
+    display: block;
+    /* Show the menu button */
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 769px) {
+  .menu-button {
+    display: none;
+    /* Hide the menu button on larger screens */
+  }
+
+  .navbar {
+    display: none;
+    /* Hide the navbar on larger screens */
+  }
+
+  .floating-nav {
+    display: flex;
+    /* Show the floating-nav on larger screens */
+  }
+}
+
+.floating-nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Slightly opaque background */
+  position: fixed;
+  /* Fixed position to float */
+  top: 23px;
+  /* Adjust below the header */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Centering adjustment */
+  border-radius: 10px;
+  /* Pill shape */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Shadow for depth */
+  z-index: 1000;
+  /* Keep it above other content */
+}
+
+.floating-nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  /* Remove default padding */
+  margin: 0;
+  /* Remove default margin */
+}
+
+.floating-nav ul li {
+  margin: 0 15px;
+  /* Space between items */
+}
+
+.floating-nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  /* Dark text color */
+  font-weight: bold;
+  /* Make text bold */
+  padding: 10px 20px;
+  /* Padding for clickable area */
+  border-radius: 20px;
+  /* Rounded corners for links */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transition */
+}
+
+.floating-nav ul li a:hover {
+  background-color: white;
+  /* Change background on hover */
+  border-radius: 10px;
+  color: #ff5733;
+  /* Change text color on hover */
+}
+
+.card-container {
+  display: flex;
+  width: 1100px;
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+}
+
+.card-image {
+  justify-content: center;
+  /* Center the image horizontally */
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* Center the image vertically */
+}
+
+.card-image img {
+  max-width: 100%;
+  /* Ensure the image fits within the container */
+  max-height: 100%;
+  /* Ensure the image fits within the container */
+  object-fit: cover;
+  /* Ensure the image covers the entire area */
+  position: relative;
+  /* Ensure proper positioning */
+  /* Maintain aspect ratio while covering the area */
+}
+
+.card-content {
+  padding: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card-content h3 {
+  font-size: 50px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-content p {
+
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-weight: bold;
+  color: #e63946;
+}
+
+.learn-more {
+  margin-top: 50px;
+
+  padding: 10px 15px;
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.learn-more :hover {
+  background-color: #457b9d;
+}
+
+@media screen and (max-width: 768px) {
+
+  header,
+  .floating-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    display: none;
+  }
+
+  .menu-container {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .floating-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu-button {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: transparent;
+  }
+
+  .floating-nav {
+    display: flex;
+  }
+
+  .menu-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+  }
+
+  .floating-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+/* Add this to prevent horizontal scrolling on mobile */
+body {
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+/* Update the card-container to ensure it fits within the viewport */
+.card-container {
+  max-width: 100%;
+  /* Ensure it doesn't exceed the viewport width */
+  /* ... existing styles ... */
+}
+
+/* Prevent horizontal scrolling on both html and body */
+html,
+body {
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+/* Ensure the card-container fits within the viewport */
+.card-container {
+  width: 90%;
+  margin-top: 50px;
+  /* Ensure it doesn't exceed the viewport width */
+  /* ... existing styles ... */
+}
+
+/* Ensure other elements do not cause overflow */
+.menu-container {
+  max-width: 100%;
+  /* Prevent overflow from the menu container */
+  /* ... existing styles ... */
+}
+
+/* Add these styles to your existing CSS */
+.filter-header {
+  text-align: center;
+  margin: 120px 0 30px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.filter-header h1 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.clear-filter {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ff5733;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.clear-filter:hover {
+  background-color: #e64a2e;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.no-results p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.view-all-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #214ed3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-link:hover {
+  background-color: #1a3dad;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .card-image {
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .card-content {
+    padding: 20px;
+    display: flex;
+    /* Use flexbox for vertical alignment */
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: center;
+    /* Center items horizontally */
+    text-align: center;
+    /* Center-align the text */
+    /* ... existing styles ... */
+  }
+}
+
+/* Add this CSS to your existing styles */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722; /* Change to your preferred color */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.floating-button img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin-right: 8px; /* Space between image and text */
+}

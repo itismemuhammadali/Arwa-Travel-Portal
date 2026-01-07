@@ -1,0 +1,38 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database credentials
+includes/db.php
+config/database.php
+
+# Logs
+error_log
+*.log
+
+# Uploads
+uploads/
+uploads/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SSL certificates
+ssl/
+.well-known/
+
+# Admin panel
+Me The Admin/
+
+# Temporary files
+*.tmp
+*.temp
