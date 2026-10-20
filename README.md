@@ -1,100 +1,50 @@
-# Arwa Travel
+# ✈️ Harper Travel Portal — Luxury Tourism, Destination Booking & Itinerary Platform
 
-A travel booking website showcasing tour packages with details, pricing, and booking functionality.
+[![Production Website](https://img.shields.io/badge/Production_Website-Live-059669?style=for-the-badge&logo=googlechrome&logoColor=white)](https://harpertravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.x_Backend-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org)
+[![CSS3](https://img.shields.io/badge/CSS3-Modern_Responsive-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://w3.org)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-## Features
+---
 
-- Browse tour packages by category (International, Adventure, Local, Leisure, Honeymoon, Trekking)
-- View tour details with pricing and duration
-- Responsive design with mobile menu
-- WhatsApp integration for bookings
-- Tour carousel with navigation
+## 🏛️ Engineering Provenance & Live Production Release
 
-## Project Structure
+> ### 🌐 Verified Commercial Web Platform
+> - **Production Domain:** [harpertravel.com](https://harpertravel.com)
+> - **Principal Architect & Engineer:** **Muhammad Ali**
+> - **Organization / Agency:** CreatorCode / Slicon Systems
 
-```
-├── index.php                 # Home page
-├── tour-details.php          # Tour details page
-├── view-all-deals.php        # All tours listing
-├── home.css                  # Home page styles
-├── tour-details.css          # Tour details styles
-├── view-all-deals.css        # All deals styles
-├── home.js                   # Home page scripts
-├── tour-details.js           # Tour details scripts
-├── view-all-deals.js         # All deals scripts
-├── includes/
-│   └── db.php               # Database connection (not in repo)
-├── Photos/                   # Image assets
-├── Home/                     # Home page components
-├── Me The Admin/             # Admin panel
-└── ARWA TRAVEL/              # Travel data
-```
+---
 
-## Setup Instructions
+## 🌟 Executive Overview & Operational Capabilities
 
-### Prerequisites
-- PHP 7.4+
-- MySQL/MariaDB
-- Web server (Apache/Nginx)
+**Harper Travel Portal** is a high-performance tourism booking and destination discovery web application. Engineered for boutique travel agencies and luxury tour operators, the platform pairs high-definition editorial visual storytelling with real-time package booking and custom itinerary inquiries.
 
-### Installation
+### Key Architectural Capabilities
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/arwa-travel.git
-cd arwa-travel
-```
+1. **Curated Destination & Tour Catalog:**
+   - Multi-tier package filtering by destination, duration, seasonal activity, and pricing tiers.
+   - Dynamic package detail viewports featuring interactive day-by-day itineraries, inclusion matrices, and hotel ratings.
 
-2. Create environment configuration
-```bash
-cp .env.example .env
-```
+2. **Deals & Limited-Time Promotion Engine (`view-all-deals.php`):**
+   - Discount code calculation, seasonal flash sales, and early-bird promotional pricing.
 
-3. Update `.env` with your database credentials
-```
-DB_HOST=your_host
-DB_USER=your_username
-DB_PASSWORD=your_password
-DB_NAME=your_database_name
-```
+3. **Inquiry & Booking Portal (`i-the-detail-portal.php`):**
+   - High-conversion lead generation and customized itinerary builder connecting prospective travelers directly with travel concierges.
 
-4. Create `includes/db.php` with your database connection:
-```php
-<?php
-$servername = getenv('DB_HOST');
-$username = getenv('DB_USER');
-$password = getenv('DB_PASSWORD');
-$dbname = getenv('DB_NAME');
+---
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+## 🛠️ Complete Technology Stack
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
-```
+| Domain | Technology | Implementation Detail |
+|---|---|---|
+| **Web Frontend** | Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JS | Ultra-fast page load speeds with optimized visual assets |
+| **Server Engine** | PHP 8.x | Dynamic server-side page rendering and form sanitization |
+| **Media Delivery** | High-Res Compressed WebP/JPEG Assets | Responsive image breakpoints optimized for mobile viewports |
 
-5. Set up your web server to point to this directory
+---
 
-6. Access the application at `http://localhost` (or your configured domain)
+## 🏛️ Engineering Provenance
 
-## Database Schema
-
-The application expects a `tours` table with the following structure:
-- `tour_id` - Primary key
-- `tour_name` - Tour name
-- `main_image` - Path to tour image
-- `price` - Tour price
-- `duration` - Tour duration
-- `currency_code` - Currency code (e.g., PKR, USD)
-- Additional fields as needed for tour details
-
-## Contact
-
-- Phone: +92 333 55 111 00
-- Email: arwatravels@gmail.com
-- WhatsApp: https://wa.me/923335511100
-
-## License
-
-All rights reserved © 2023 Arwa Travel
+Architected, engineered, and maintained by **Muhammad Ali** as Principal Mobile Architect.
