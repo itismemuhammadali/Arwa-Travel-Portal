@@ -1,6 +1,10 @@
-# ✈️ Harper Travel Portal — Luxury Tourism, Destination Booking & Itinerary Platform
+# ✈️ Arwa Travel Portal — Luxury Tourism, Destination Booking & Itinerary Platform
 
-[![Production Website](https://img.shields.io/badge/Production_Website-Live-059669?style=for-the-badge&logo=googlechrome&logoColor=white)](https://harpertravel.com)
+<p align="center">
+  <img src="assets/branding/logo.jpg" alt="Arwa Travel Logo" width="180" style="border-radius: 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);" />
+</p>
+
+[![Production Website](https://img.shields.io/badge/Production_Website-Live-059669?style=for-the-badge&logo=googlechrome&logoColor=white)](https://arwatravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.x_Backend-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org)
 [![CSS3](https://img.shields.io/badge/CSS3-Modern_Responsive-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://w3.org)
@@ -11,7 +15,7 @@
 ## 🏛️ Engineering Provenance & Live Production Release
 
 > ### 🌐 Verified Commercial Web Platform
-> - **Production Domain:** [harpertravel.com](https://harpertravel.com)
+> - **Production Domain:** [arwatravel.com](https://arwatravel.com)
 > - **Principal Architect & Engineer:** **Muhammad Ali**
 > - **Organization / Agency:** CreatorCode / Slicon Systems
 
@@ -19,7 +23,7 @@
 
 ## 🌟 Executive Overview & Operational Capabilities
 
-**Harper Travel Portal** is a high-performance tourism booking and destination discovery web application. Engineered for boutique travel agencies and luxury tour operators, the platform pairs high-definition editorial visual storytelling with real-time package booking and custom itinerary inquiries.
+**Arwa Travel Portal** is a high-performance tourism booking and destination discovery web application. Engineered for boutique travel agencies and luxury tour operators, the platform pairs high-definition editorial visual storytelling with real-time package booking and custom itinerary inquiries.
 
 ### Key Architectural Capabilities
 
